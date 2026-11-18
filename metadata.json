@@ -1,0 +1,6 @@
+{
+  "name": "Oratória Kids — Comunicação · Confiança · Liderança",
+  "description": "Acompanhamento personalizado de comunicação e oratória para crianças e pré-adolescentes ao domicílio em Luanda, Angola, com Ariel Gaspar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
