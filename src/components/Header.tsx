@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "Competências", href: "#competencias" },
   { label: "Modalidades", href: "#modalidades" },
   { label: "O Mentor", href: "#mentor" },
-  { label: "Desafio IA", href: "#desafio-ia" },
+  { label: "Montar Plano", href: "#montar-plano" },
 ];
 
 interface HeaderProps {

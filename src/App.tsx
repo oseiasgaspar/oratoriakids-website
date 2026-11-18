@@ -7,7 +7,7 @@ import {
   type ModalityOption,
 } from "./components/ModalidadesSection";
 import { MentorSection } from "./components/MentorSection";
-import { ChallengeGeneratorSection } from "./components/ChallengeGeneratorSection";
+import { PlanConfiguratorSection } from "./components/PlanConfiguratorSection";
 import { ContactFooterSection } from "./components/ContactFooterSection";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
@@ -38,7 +38,7 @@ export default function App() {
         <CompetenciasSection />
         <ModalidadesSection onSelectModality={scrollToBooking} />
         <MentorSection onBookMentorClick={() => scrollToBooking("Domicílio")} />
-        <ChallengeGeneratorSection />
+        <PlanConfiguratorSection />
       </main>
 
       <ContactFooterSection

@@ -417,10 +417,10 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
               O Mentor
             </a>
             <a
-              href="#desafio-ia"
+              href="#montar-plano"
               className="hover:text-[#F5B800] transition-colors"
             >
-              Desafio IA
+              Montar Plano
             </a>
           </nav>
 

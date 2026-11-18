@@ -74,11 +74,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onBookHomeClick }) => 
               </button>
 
               <a
-                href="#desafio-ia"
+                href="#montar-plano"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm sm:text-base font-semibold text-white border border-white/35 hover:border-[#F5B800] hover:text-[#F5B800] rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B800]"
               >
                 <Sparkles className="w-4 h-4 shrink-0 text-[#F5B800]" />
-                <span>Experimentar Desafio IA</span>
+                <span>Montar Plano Ideal</span>
               </a>
             </div>
           </div>
