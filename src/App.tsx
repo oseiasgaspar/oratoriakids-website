@@ -10,10 +10,12 @@ import { MentorSection } from "./components/MentorSection";
 import { PlanConfiguratorSection } from "./components/PlanConfiguratorSection";
 import { ContactFooterSection } from "./components/ContactFooterSection";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { useSiteConfig } from "./config/siteConfig";
 
 export default function App() {
   const [selectedModality, setSelectedModality] =
     useState<ModalityOption>("Domicílio");
+  const siteConfig = useSiteConfig();
 
   const scrollToBooking = (modality?: ModalityOption) => {
     if (modality) {
@@ -38,15 +40,16 @@ export default function App() {
         <CompetenciasSection />
         <ModalidadesSection onSelectModality={scrollToBooking} />
         <MentorSection onBookMentorClick={() => scrollToBooking("Domicílio")} />
-        <PlanConfiguratorSection />
+        <PlanConfiguratorSection config={siteConfig} />
       </main>
 
       <ContactFooterSection
         selectedModality={selectedModality}
         onModalityChange={setSelectedModality}
+        config={siteConfig}
       />
 
-      <FloatingWhatsApp />
+      <FloatingWhatsApp config={siteConfig} />
     </div>
   );
 }

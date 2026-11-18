@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ onBookClick }) => {
         <a
           href="#inicio"
           className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B800] rounded-md"
-          aria-label="Oratória Kids — Ir para o início"
+          aria-label="ORAKIDS — Ir para o início"
         >
           <OratoriaLogo variant="header" />
         </a>

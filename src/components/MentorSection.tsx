@@ -35,7 +35,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({
                 {!imgError ? (
                   <img
                     src={arielTribunaImg}
-                    alt="Ariel Gaspar a discursar numa tribuna — Fundador e Mentor da Oratória Kids em Luanda"
+                    alt="Ariel Gaspar a discursar numa tribuna — Fundador e Mentor da ORAKIDS em Luanda"
                     referrerPolicy="no-referrer"
                     onError={() => setImgError(true)}
                     className="w-full h-full object-cover object-center"
@@ -47,7 +47,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({
                       Ariel Gaspar
                     </p>
                     <p className="text-xs text-neutral-500 mt-1">
-                      Fundador · Oratória Kids
+                      Fundador · ORAKIDS
                     </p>
                   </div>
                 )}
@@ -72,7 +72,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({
           {/* Mentor Biography & Mission */}
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#161618]/65 mb-3">
-              O Mentor · Fundador da Oratória Kids
+              O Mentor · Fundador da ORAKIDS
             </p>
             <h2
               className="font-display font-extrabold tracking-tight text-[#161618] leading-tight text-balance mb-6"
@@ -85,7 +85,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({
               <p>
                 Ariel Gaspar fundou a{" "}
                 <strong className="font-semibold text-[#161618]">
-                  Oratória Kids
+                  ORAKIDS
                 </strong>{" "}
                 com uma convicção clara: saber comunicar com segurança não é um
                 dom reservado a poucos — é uma competência prática que se

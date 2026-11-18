@@ -115,7 +115,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onBookHomeClick }) => 
                     Ariel Gaspar · Mentor
                   </p>
                   <p className="text-sm text-neutral-400 mt-1">
-                    Oratória Kids · Luanda, Angola
+                    ORAKIDS · Luanda, Angola
                   </p>
                 </div>
               )}

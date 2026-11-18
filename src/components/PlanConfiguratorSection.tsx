@@ -6,6 +6,15 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 
+import {
+  DEFAULT_SITE_CONFIG,
+  type SiteContactConfig,
+} from "../config/siteConfig";
+
+interface PlanConfiguratorSectionProps {
+  config?: SiteContactConfig;
+}
+
 const AGE_GROUPS = ["6 a 8 anos", "9 a 11 anos", "12 a 15 anos"] as const;
 
 const OBJECTIVES = [
@@ -22,7 +31,9 @@ const MODALITIES = [
   "Lista de Espera — Espaço Físico (Em Breve)",
 ] as const;
 
-export const PlanConfiguratorSection: React.FC = () => {
+export const PlanConfiguratorSection: React.FC<PlanConfiguratorSectionProps> = ({
+  config = DEFAULT_SITE_CONFIG,
+}) => {
   const [ageGroup, setAgeGroup] = useState<string>(AGE_GROUPS[1]);
   const [selectedObjectives, setSelectedObjectives] = useState<string[]>([
     "Vencer a timidez",
@@ -48,7 +59,7 @@ export const PlanConfiguratorSection: React.FC = () => {
         : "Avaliação inicial para definir prioridades";
 
     const lines = [
-      "Olá Ariel Gaspar! Gostaria de agendar uma aula diagnóstica da Oratória Kids.",
+      `Olá Ariel Gaspar! Gostaria de agendar uma aula diagnóstica da ${config.brandName}.`,
       `• Idade da criança: ${ageGroup}`,
       `• Objectivos: ${objectivesText}`,
       `• Modalidade: ${modality}`,
@@ -62,12 +73,12 @@ export const PlanConfiguratorSection: React.FC = () => {
     }
 
     return lines.join("\n");
-  }, [ageGroup, selectedObjectives, modality, guardianName, neighborhood]);
+  }, [ageGroup, selectedObjectives, modality, guardianName, neighborhood, config.brandName]);
 
   const whatsappUrl = useMemo(
     () =>
-      `https://wa.me/244936192874?text=${encodeURIComponent(generatedMessage)}`,
-    [generatedMessage],
+      `https://wa.me/${config.whatsappDigits}?text=${encodeURIComponent(generatedMessage)}`,
+    [generatedMessage, config.whatsappDigits],
   );
 
   const handleCopy = async () => {
@@ -285,7 +296,7 @@ export const PlanConfiguratorSection: React.FC = () => {
                 className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-4 text-sm font-bold text-[#161618] bg-[#F5B800] hover:bg-[#ffca28] active:scale-[0.99] rounded-md transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-                <span>Enviar Pedido no WhatsApp (+244 936 192 874)</span>
+                <span>Enviar Pedido no WhatsApp ({config.phoneDisplay})</span>
               </a>
 
               <button

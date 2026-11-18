@@ -28,8 +28,8 @@ export const ModalidadesSection: React.FC<ModalidadesSectionProps> = ({
             Começa na tranquilidade de casa, evolui para o palco.
           </h2>
           <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
-            A jornada Oratória Kids acompanha o crescimento comunicativo da
-            criança desde a base individual até às futuras dinâmicas em grupo.
+            A jornada ORAKIDS acompanha o crescimento comunicativo da criança
+            desde a base individual até às futuras dinâmicas em grupo.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export const ModalidadesSection: React.FC<ModalidadesSectionProps> = ({
             </button>
           </article>
 
-          {/* Card 2: Upcoming - Espaço Oratória Kids */}
+          {/* Card 2: Upcoming - Espaço ORAKIDS */}
           <article className="bg-[#F6F6F8] text-[#161618] rounded-xl p-7 sm:p-9 flex flex-col justify-between border border-neutral-200">
             <div>
               <div className="flex items-center justify-between gap-4 mb-6">
@@ -103,7 +103,7 @@ export const ModalidadesSection: React.FC<ModalidadesSectionProps> = ({
               </div>
 
               <h3 className="font-display font-extrabold text-2xl sm:text-[28px] text-[#161618] mb-3">
-                Espaço Oratória Kids
+                Espaço ORAKIDS
               </h3>
 
               <p className="text-sm sm:text-base text-neutral-600 leading-relaxed mb-7">

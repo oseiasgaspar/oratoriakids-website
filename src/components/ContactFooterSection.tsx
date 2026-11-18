@@ -12,10 +12,15 @@ import {
 } from "lucide-react";
 import { OratoriaLogo } from "./OratoriaLogo";
 import type { ModalityOption } from "./ModalidadesSection";
+import {
+  DEFAULT_SITE_CONFIG,
+  type SiteContactConfig,
+} from "../config/siteConfig";
 
 interface ContactFooterSectionProps {
   selectedModality: ModalityOption;
   onModalityChange: (modality: ModalityOption) => void;
+  config?: SiteContactConfig;
 }
 
 const LUANDA_ZONES = [
@@ -30,6 +35,7 @@ const LUANDA_ZONES = [
 export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
   selectedModality,
   onModalityChange,
+  config = DEFAULT_SITE_CONFIG,
 }) => {
   const [guardianName, setGuardianName] = useState("");
   const [childInfo, setChildInfo] = useState("");
@@ -65,10 +71,10 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
     const modalityText =
       selectedModality === "Domicílio"
         ? "Aulas ao Domicílio"
-        : "Espaço Oratória Kids (Lista VIP)";
+        : `Espaço ${config.brandName} (Lista VIP)`;
 
-    const message = `Olá Ariel Gaspar! Gostaria de solicitar um agendamento na Oratória Kids.\n\n• Encarregado(a): ${gName}\n• Criança e Idade: ${cInfo}\n• Zona/Bairro em Luanda: ${zone}\n• Modalidade pretendida: ${modalityText}`;
-    const whatsappUrl = `https://wa.me/244936192874?text=${encodeURIComponent(
+    const message = `Olá Ariel Gaspar! Gostaria de solicitar um agendamento na ${config.brandName}.\n\n• Encarregado(a): ${gName}\n• Criança e Idade: ${cInfo}\n• Zona/Bairro em Luanda: ${zone}\n• Modalidade pretendida: ${modalityText}`;
+    const whatsappUrl = `https://wa.me/${config.whatsappDigits}?text=${encodeURIComponent(
       message,
     )}`;
 
@@ -126,7 +132,7 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
 
             <div className="space-y-4 pt-6 border-t border-neutral-200">
               <a
-                href="https://wa.me/244936192874"
+                href={`https://wa.me/${config.whatsappDigits}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group py-1.5"
@@ -139,13 +145,13 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
                     WhatsApp / Telefone
                   </span>
                   <span className="font-display font-bold text-base text-[#161618] tabular-nums group-hover:underline">
-                    +244 936 192 874
+                    {config.phoneDisplay}
                   </span>
                 </div>
               </a>
 
               <a
-                href="mailto:oratoriakids@gmail.com"
+                href={`mailto:${config.email}`}
                 className="flex items-center gap-4 group py-1.5"
               >
                 <span className="w-10 h-10 rounded-md bg-[#F6F6F8] border border-neutral-200 group-hover:border-[#F5B800] group-hover:bg-[#F5B800] flex items-center justify-center transition-colors shrink-0">
@@ -154,13 +160,13 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
                 <div>
                   <span className="block text-xs text-neutral-500">Email</span>
                   <span className="font-display font-bold text-base text-[#161618] group-hover:underline">
-                    oratoriakids@gmail.com
+                    {config.email}
                   </span>
                 </div>
               </a>
 
               <a
-                href="https://instagram.com/oratoriakids"
+                href={config.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group py-1.5"
@@ -176,7 +182,7 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
                     Instagram
                   </span>
                   <span className="font-display font-bold text-base text-[#161618] group-hover:underline">
-                    @oratoriakids
+                    {config.instagramHandle}
                   </span>
                 </div>
               </a>
@@ -193,7 +199,7 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
                     Localização
                   </span>
                   <span className="font-display font-bold text-base text-[#161618]">
-                    Luanda, Angola
+                    {config.location}
                   </span>
                 </div>
               </div>
@@ -390,7 +396,7 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
           <div className="flex flex-col gap-2">
             <OratoriaLogo variant="footer" />
             <p className="text-xs text-neutral-400">
-              Luanda, Angola
+              {config.location}
             </p>
           </div>
 
@@ -425,7 +431,7 @@ export const ContactFooterSection: React.FC<ContactFooterSectionProps> = ({
           </nav>
 
           <p className="text-xs text-neutral-400">
-            © {new Date().getFullYear()} Oratória Kids. Todos os direitos
+            © {new Date().getFullYear()} {config.brandName}. Todos os direitos
             reservados.
           </p>
         </div>

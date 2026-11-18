@@ -1,9 +1,19 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
+import {
+  DEFAULT_SITE_CONFIG,
+  type SiteContactConfig,
+} from "../config/siteConfig";
 
-export const FloatingWhatsApp: React.FC = () => {
-  const href = `https://wa.me/244936192874?text=${encodeURIComponent(
-    "Olá Ariel! Visitei o website da Oratória Kids e gostaria de saber mais sobre as aulas ao domicílio em Luanda.",
+interface FloatingWhatsAppProps {
+  config?: SiteContactConfig;
+}
+
+export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({
+  config = DEFAULT_SITE_CONFIG,
+}) => {
+  const href = `https://wa.me/${config.whatsappDigits}?text=${encodeURIComponent(
+    `Olá Ariel! Visitei o website da ${config.brandName} e gostaria de saber mais sobre as aulas ao domicílio em Luanda.`,
   )}`;
 
   return (
